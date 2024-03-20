@@ -1,7 +1,8 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
-import Link from "next/link";
+import { Menu } from "@/app/Parts/Menu";
+
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -16,22 +17,11 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html lang="ja">
       <body className={inter.className}>
-        <nav className="h-screen inline-block shadow-xl">
-          <section className="flex flex-col h-full justify-center">
-            <Link className="py-5 px-7 font-bold hover:bg-blue-100 hover:text-blue-700 transition duration-400 ease-out" href={"/kantoo"}>カントー地方</Link>
-            <Link className="py-5 px-7 font-bold hover:bg-blue-100 hover:text-blue-700 transition duration-400 ease-out" href={"/zyouto"}>ジョウト地方</Link>
-            <Link className="py-5 px-7 font-bold hover:bg-blue-100 hover:text-blue-700 transition duration-400 ease-out" href={"/houen"}>ホウエン地方</Link>
-            <Link className="py-5 px-7 font-bold hover:bg-blue-100 hover:text-blue-700 transition duration-400 ease-out" href={"/sinou"}>シンオウ地方</Link>
-            <Link className="py-5 px-7 font-bold hover:bg-blue-100 hover:text-blue-700 transition duration-400 ease-out" href={"/issyu"}>イッシュ地方</Link>
-            <Link className="py-5 px-7 font-bold hover:bg-blue-100 hover:text-blue-700 transition duration-400 ease-out" href={"/karosu"}>カロス地方</Link>
-            <Link className="py-5 px-7 font-bold hover:bg-blue-100 hover:text-blue-700 transition duration-400 ease-out" href={"/aroora"}>アローラ地方</Link>
-            <Link className="py-5 px-7 font-bold hover:bg-blue-100 hover:text-blue-700 transition duration-400 ease-out" href={"/gararu"}>ガラル地方</Link>
-            <Link className="py-5 px-7 font-bold hover:bg-blue-100 hover:text-blue-700 transition duration-400 ease-out" href={"/hisui"}>ヒスイ地方</Link>
-            <Link className="py-5 px-7 font-bold hover:bg-blue-100 hover:text-blue-700 transition duration-400 ease-out" href={"/parudea"}>パルデア地方</Link>
-          </section>
-        </nav>
+
+      <Menu/>
+
         {children}
       </body>
     </html>
