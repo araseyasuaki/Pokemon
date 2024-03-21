@@ -19,28 +19,29 @@ import { MenuBer } from "@/app/Parts/MenuLink";
 
   export function Menu() {
 
-    const [ area, setArea ] = useState(true);
+    const [ area, setArea ] = useState(false);
     const areaBtn = () => {
       setArea(!area);
     }
-    console.log(area)
 
     return (
-      <nav className="fixed top-0 left-0 h-screen w-48 shadow-xl overflow-y-scroll">
-        <section className="flex flex-col justify-center my-16">
-            <MenuBer link="zenkoku" text="全国図鑑"/>
-
-            <p onClick={areaBtn} className="py-4 px-7 font-bold hover:bg-blue-100 hover:text-blue-700 transition duration-400 ease-out">
-              地方別
-            </p>
-            <div className={clsx("flex flex-col ml-7 border-l-2 border-gray-200 mb-100",{"hidden": area === true,})}>
+      <nav className="fixed top-0 left-0 h-screen w-52 shadow-xl overflow-y-scroll">
+        <section className={clsx("flex flex-col justify-start overflow-hidden",{"h-[784px]": area === true, "h-screen": area === false})}>
+          <MenuBer link="zenkoku" text="全国図鑑"/>
+          <p onClick={areaBtn} className="py-4 relative px-7 font-bold hover:bg-blue-100 hover:text-blue-700 transition duration-400 ease-out">
+            地方別<span className={clsx("absolute right-6 top-1/2 -translate-y-1/2 transition duration-400 ease-out",{"rotate-90": area === true})}>＞</span>
+          </p>
+          <section className="relative h-0">
+            <div className="flex absolute flex-col ml-7 border-l-2 border-gray-200">
               {areaData.map((data, index)=>(
                 <MenuBer key={index} link={data.link} text={data.text}/>
               ))}
             </div>
-
+          </section>
+          <div className={clsx("relative z-10 bg-white pb-[448px] flex flex-col transition duration-1000",{"translate-y-[560px]": area === true})}>
             <MenuBer link="megasinka" text="メガシンカ"/>
             <MenuBer link="kyodaimax" text="キョダイマックス"/>
+          </div>
         </section>
       </nav>
     );
