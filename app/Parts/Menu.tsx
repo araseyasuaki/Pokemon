@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import clsx from "clsx";
-import { MenuBer } from "@/app/Parts/MenuLink";
+import { MenuBer } from "@/app/parts/MenuLink";
 
   const areaData = [
     { link: "kantoo", text: "カントー地方" },
@@ -25,24 +25,28 @@ import { MenuBer } from "@/app/Parts/MenuLink";
     }
 
     return (
-      <nav className="fixed top-0 left-0 h-screen w-52 shadow-xl overflow-y-scroll">
-        <section className={clsx("flex flex-col justify-start overflow-hidden",{"h-[784px]": area === true, "h-screen": area === false})}>
-          <MenuBer link="zenkoku" text="全国図鑑"/>
-          <p onClick={areaBtn} className="py-4 relative px-7 font-bold hover:bg-blue-100 hover:text-blue-700 transition duration-400 ease-out">
-            地方別<span className={clsx("absolute right-6 top-1/2 -translate-y-1/2 transition duration-400 ease-out",{"rotate-90": area === true})}>＞</span>
-          </p>
-          <section className="relative h-0">
-            <div className="flex absolute flex-col ml-7 border-l-2 border-gray-200">
-              {areaData.map((data, index)=>(
-                <MenuBer key={index} link={data.link} text={data.text}/>
-              ))}
+      <section className="fixed top-0 left-0 w-52 h-screen shadow-xl overflow-y-scroll">
+        <section className="h-aout overflow-hidden">
+          <nav className="flex flex-col my-16">
+            <MenuBer link="oar" text="全国図鑑"/>
+            <button onClick={areaBtn} className="relative py-4 px-6 font-bold hover:bg-blue-100 hover:text-blue-700 transition duration-400 ease-out text-left">地方別
+              <span className={clsx("absolute right-6 top-1/2 -translate-y-1/2 transition duration-700 ease-out",{"rotate-90": area === true})}>＞</span>
+            </button>
+            <section className="relative">
+              <div className="absolute ml-7 border-l-2 border-gray-200 flex flex-col h-[560px]">
+                {areaData.map((data, index)=>(
+                  <MenuBer key={index} link={data.link} text={data.text}/>
+                ))}
+                <div className={clsx("absolute bottom-0 right-0 w-[146px] transition-height bg-white duration-700 ease-out", {"h-0": area === true, "h-[560px]": area === false})}></div>
+              </div>
+              <div className={clsx("transition-height duration-700 ease-out", {"h-[560px]": area === true, "h-0": area === false})}></div>
+            </section>
+            <div className="z-10 flex flex-col">
+              <MenuBer link="mega" text="メガシンカ"/>
+              <MenuBer link="max" text="キョダイマックス"/>
             </div>
-          </section>
-          <div className={clsx("relative z-10 bg-white pb-[448px] flex flex-col transition duration-1000",{"translate-y-[560px]": area === true})}>
-            <MenuBer link="megasinka" text="メガシンカ"/>
-            <MenuBer link="kyodaimax" text="キョダイマックス"/>
-          </div>
+          </nav>
         </section>
-      </nav>
+      </section>
     );
   }
