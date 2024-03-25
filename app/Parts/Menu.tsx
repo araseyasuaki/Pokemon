@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import clsx from "clsx";
-import { MenuBer } from "@/app/parts/menuLink";
+import { MenuBer } from "@/app/parts/menulink";
   const areaData = [
     { link: "kantoo", text: "カントー地方" },
     { link: "zyouto", text: "ジョウト地方" },
