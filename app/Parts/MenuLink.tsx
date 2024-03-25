@@ -1,15 +1,13 @@
-'use client';
-
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import clsx from "clsx";
 
-interface MenuBer {
+interface MenuBerProps {
   link: string,
   text: string,
 }
 
-export function MenuBer(props: MenuBer) {
+export function MenuBer(props: MenuBerProps) {
 
   const pathname = usePathname();
 
