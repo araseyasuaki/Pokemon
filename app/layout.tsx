@@ -1,9 +1,7 @@
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
+import { notoSans } from "@/app/font/font";
 import "./globals.css";
 import { Menu } from "@/app/parts/menu";
-
-const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -17,7 +15,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="ja">
-      <body className={inter.className}>
+      <body className={`${notoSans.className} antialiased`}>
           <Menu/>
           <main className="flex">
             <div className="w-52"/>
