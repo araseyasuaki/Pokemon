@@ -6,7 +6,7 @@ interface resFl {
   names: { name: string }[],
 }
 
-export default function Home() {
+export default function Kantoo() {
 
   const [ pokeDataA, setPokeDataA ] = useState("");
   const [ pokeDataB, setPokeDataB ] = useState<resFl>();
@@ -30,14 +30,7 @@ export default function Home() {
 
   return (
     <>
-    {/* {pokeDataA ? (
-        <img
-        src={pokeDataA.sprites.other["official-artwork"].front_default}
-        alt={pokeDataA.name}
-      />
-      ) : (
-        <p>aaa</p>
-      )} */}
+    
       {pokeDataB ? (
         <p>{pokeDataB.names[0].name}</p>
       ) : (

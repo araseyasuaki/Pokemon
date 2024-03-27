@@ -27,7 +27,7 @@ import { MenuBer } from "@/app/parts/menulink";
       <section className="fixed top-0 left-0 w-52 h-screen shadow-xl overflow-y-scroll">
         <section className="h-aout overflow-hidden">
           <nav className="flex flex-col my-16">
-            <MenuBer link="oar" text="全国図鑑"/>
+            <MenuBer link="/" text="全国図鑑"/>
             <button onClick={areaBtn} className="relative py-4 px-6 font-bold hover:bg-blue-100 hover:text-blue-700 transition duration-400 ease-out text-left">地方別
               <span className={clsx("absolute right-6 top-1/2 -translate-y-1/2 transition duration-700 ease-out",{"rotate-90": area === true})}>＞</span>
             </button>

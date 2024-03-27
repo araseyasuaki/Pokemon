@@ -18,8 +18,11 @@ export default function RootLayout({
   return (
     <html lang="ja">
       <body className={inter.className}>
-        <Menu/>
-        {children}
+          <Menu/>
+          <main className="flex">
+            <div className="w-52"/>
+            {children}
+          </main>
       </body>
     </html>
   );
