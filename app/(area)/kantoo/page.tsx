@@ -1,104 +1,32 @@
-// 'use client'
+'use client';
 
-// import { useState, useEffect } from "react";
+import React, { useState, useEffect } from "react";
 
-// export default function Kantoo() {
-
-//   interface resFlA {
-//     sprites: {
-//       other: {
-//         'officia-artwork': {
-//           front_default: string
-//         }
-//       }
-//     },
-//   }
-//   interface resFlB {
-//     names: string[],
-//   }
-
-//   const [ pokeDataA, setPokeDataA ] = useState([]);
-//   const [ pokeDataB, setPokeDataB ] = useState([]);
-
-//   useEffect(()=>{
-//     const fetchData = async () => {
-//       const resDataA = [];
-//       const resDataB = [];
-//       try{
-//         for( let i = 1; i <= 3; i ++){
-//           const resA = await fetch(`https://pokeapi.co/api/v2/pokemon/${i}`);
-//           const resB = await fetch(`https://pokeapi.co/api/v2/pokemon-species/${i}`);
-//           const dataA = await resA.json();
-//           const dataB = await resB.json();
-//           resDataA.push(dataA);
-//           resDataB.push(dataB);
-//         }
-//         setPokeDataA(resDataA)
-//         setPokeDataB(resDataB)
-//       }catch (error){
-//         console.error('Error fetching Pokemon data', error);
-//       }
-//     }
-//     fetchData();
-//   },[])
-
-//   return (
-//     <>
-
-//       <main className="flex flex-col text-left">
-//         {pokeDataA ? (
-//           <div>
-//             {pokeDataA.map((data, index)=>(
-//               <p>{data.name}</p>
-//             ))}
-//           </div>
-//         ) : (
-//           <p>aaa</p>
-//         )}
-//       </main>
-
-//     </>
-//   );
-// }
-
-'use client'
-
-import { useState, useEffect } from "react";
+interface PokemonData {
+  img: string;
+  name: string;
+  names: string;
+}
 
 export default function Kantoo() {
-
-  interface resFlA {
-    sprites: {
-      other: {
-        'official-artwork': {
-          front_default: string
-        }
-      }
-    },
-    name: string
-  }
-  interface resFlB {
-    names: string,
-  }
-
-  const [pokeDataA, setPokeDataA] = useState<resFlA[]>([]);
-  const [pokeDataB, setPokeDataB] = useState<resFlB[]>([]);
+  const [pokeData, setPokeData] = useState<PokemonData[]>([]);
 
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const resDataA: resFlA[] = [];
-        const resDataB: resFlB[] = [];
-        for (let i = 152; i <= 251; i++) {
+        const tempPokeData: PokemonData[] = [];
+        for (let i = 1; i <= 50; i++) {
           const resA = await fetch(`https://pokeapi.co/api/v2/pokemon/${i}`);
           const resB = await fetch(`https://pokeapi.co/api/v2/pokemon-species/${i}`);
-          const dataA: resFlA = await resA.json();
-          const dataB: resFlB = await resB.json();
-          resDataA.push(dataA);
-          resDataB.push(dataB);
+          const dataA = await resA.json();
+          const dataB = await resB.json();
+          tempPokeData.push({
+            img: dataA.sprites.other["official-artwork"].front_default,
+            name: dataA.name,
+            names: dataB.names[0].name
+          });
         }
-        setPokeDataA(resDataA);
-        setPokeDataB(resDataB);
+        setPokeData(tempPokeData);
       } catch (error) {
         console.error('Error fetching Pokemon data', error);
       }
@@ -108,19 +36,27 @@ export default function Kantoo() {
 
   return (
     <>
-
-      <main className="flex flex-col text-left">
-        {pokeDataA.length > 0 ? (
-          <div>
-            {pokeDataA.map((data, index) => (
-              <p key={index}>{data.name}</p>
+      <main className="inline-block">
+        {pokeData.length > 0 ? (
+          <section className="flex flex-wrap justify-start">
+            {pokeData.map((data, index) => (
+              <section className="sm:w-1/3 md:w-1/4 lg:w-1/5 xl:w-1/6" key={index}>
+                <div className="border-2 border-gray-200 rounded-xl w-[90%] p-4 mx-auto my-2.5">
+                  <img src={data.img} alt={data.name}/>
+                  <p className="h-8 pt-4">{data.names}</p>
+                </div>
+              </section>
             ))}
-          </div>
+          </section>
         ) : (
-          <p>Loading...</p>
+          <section>
+            <section>
+              <img src="" alt="" />
+              <p></p>
+            </section>
+          </section>
         )}
       </main>
-
     </>
   );
 }

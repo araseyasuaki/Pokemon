@@ -17,8 +17,7 @@ export default function RootLayout({
     <html lang="ja">
       <body className={`${notoSans.className} antialiased`}>
           <Menu/>
-          <main className="flex">
-            <div className="w-52"/>
+          <main className="ml-52 p-12">
             {children}
           </main>
       </body>

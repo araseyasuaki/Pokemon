@@ -28,15 +28,15 @@ import { MenuBer } from "@/app/parts/menulink";
         <section className="h-aout overflow-hidden">
           <nav className="flex flex-col my-16">
             <MenuBer link="/" text="全国図鑑"/>
-            <button onClick={areaBtn} className="relative py-4 px-6 font-bold hover:bg-blue-100 hover:text-blue-700 transition duration-400 ease-out text-left">地方別
+            <button onClick={areaBtn} className="relative h-14 py-5 px-6 font-bold hover:bg-blue-100 hover:text-blue-700 transition duration-400 ease-out text-left">地方別
               <span className={clsx("absolute right-6 top-1/2 -translate-y-1/2 transition duration-700 ease-out",{"rotate-90": area === true})}>＞</span>
             </button>
             <section className="relative">
-              <div className="absolute ml-7 border-l-2 border-gray-200 flex flex-col h-[560px]">
+              <div className="absolute ml-7 w-[176px] border-l-2 border-gray-200 flex flex-col h-[560px]">
                 {areaData.map((data, index)=>(
                   <MenuBer key={index} link={data.link} text={data.text}/>
                 ))}
-                <div className={clsx("absolute bottom-0 right-0 w-[146px] transition-height bg-white duration-700 ease-out", {"h-0": area === true, "h-[560px]": area === false})}></div>
+                <div className={clsx("absolute bottom-0 right-0 w-[176px] transition-height bg-white duration-700 ease-out", {"h-0": area === true, "h-[560px]": area === false})}></div>
               </div>
               <div className={clsx("transition-height duration-700 ease-out", {"h-[560px]": area === true, "h-0": area === false})}></div>
             </section>
