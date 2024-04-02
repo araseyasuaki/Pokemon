@@ -1,7 +1,8 @@
 'use client'
 
 import { useState, useEffect } from "react";
-
+import Kantoo from "@/app/(area)/kantoo/page";
+import Area from "@/app/parts/area";
 interface resFl {
   names: { name: string }[],
 }
@@ -30,19 +31,8 @@ export default function Home() {
 
   return (
     <>
-    {/* {pokeDataA ? (
-        <img
-        src={pokeDataA.sprites.other["official-artwork"].front_default}
-        alt={pokeDataA.name}
-      />
-      ) : (
-        <p>aaa</p>
-      )} */}
-      {pokeDataB ? (
-        <p>{pokeDataB.names[0].name}</p>
-      ) : (
-        <p>aaa</p>
-      )}
+    <Kantoo/>
+    <Area firstNumber={51} lastNumber={100}/>
     </>
   );
 }

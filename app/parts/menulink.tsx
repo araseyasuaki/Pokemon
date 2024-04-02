@@ -4,12 +4,12 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import clsx from "clsx";
 
-interface MenuBerProps {
+interface menuBerProps {
   link: string,
   text: string,
 }
 
-export function MenuBer(props: MenuBerProps) {
+export function MenuBer(props: menuBerProps) {
 
   const pathname = usePathname();
 
