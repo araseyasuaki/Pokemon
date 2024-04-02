@@ -2,35 +2,33 @@
 
 import React, { useState, useEffect } from "react";
 
-interface PokemonData {
+interface pokemonData {
   img: string;
   name: string;
   names: string;
 }
 
 interface apiConpProps {
-  firstNumber: number,
-  lastNumber: number,
+  number: number,
 }
 
 export default function Kantoo(props: apiConpProps) {
-  const [pokeData, setPokeData] = useState<PokemonData[]>([]);
+
+  const [pokeData, setPokeData] = useState<pokemonData[]>([]);
 
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const tempPokeData: PokemonData[] = [];
-        for (let i = props.firstNumber; i <= props.lastNumber; i++) {
-          const resA = await fetch(`https://pokeapi.co/api/v2/pokemon/${i}`);
-          const resB = await fetch(`https://pokeapi.co/api/v2/pokemon-species/${i}`);
-          const dataA = await resA.json();
-          const dataB = await resB.json();
-          tempPokeData.push({
-            img: dataA.sprites.other["official-artwork"].front_default,
-            name: dataA.name,
-            names: dataB.names[0].name
-          });
-        }
+        const tempPokeData: pokemonData[] = [];
+        const resA = await fetch(`https://pokeapi.co/api/v2/pokemon/${props.number}`);
+        const resB = await fetch(`https://pokeapi.co/api/v2/pokemon-species/${props.number}`);
+        const dataA = await resA.json();
+        const dataB = await resB.json();
+        tempPokeData.push({
+          img: dataA.sprites.other["official-artwork"].front_default,
+          name: dataA.name,
+          names: dataB.names[0].name
+        });
         setPokeData(tempPokeData);
       } catch (error) {
         console.error('Error fetching Pokemon data', error);

@@ -2,7 +2,7 @@
 
 import { useState, useEffect } from "react";
 import Kantoo from "@/app/(area)/kantoo/page";
-import Area from "@/app/parts/area";
+import Areaset from "@/app/parts/areaset";
 interface resFl {
   names: { name: string }[],
 }
@@ -32,12 +32,17 @@ export default function Home() {
   return (
     <>
       <section className="flex flex-wrap">
-        <Area firstNumber={1} lastNumber={50}/>
-        <Area firstNumber={51} lastNumber={100}/>
-        <Area firstNumber={101} lastNumber={150}/>
-        <Area firstNumber={151} lastNumber={200}/>
-        <Area firstNumber={201} lastNumber={250}/>
-        <Area firstNumber={251} lastNumber={300}/>
+        <Areaset firstNumber={1} lastNumber={100}/>
+        <Areaset firstNumber={101} lastNumber={200}/>
+        <Areaset firstNumber={201} lastNumber={300}/>
+        <Areaset firstNumber={301} lastNumber={400}/>
+        <Areaset firstNumber={401} lastNumber={500}/>
+        <Areaset firstNumber={501} lastNumber={600}/>
+        <Areaset firstNumber={600} lastNumber={700}/>
+        <Areaset firstNumber={701} lastNumber={800}/>
+        <Areaset firstNumber={801} lastNumber={900}/>
+        <Areaset firstNumber={901} lastNumber={1000}/>
+        <Areaset firstNumber={1001} lastNumber={1025}/>
       </section>
     </>
   );
