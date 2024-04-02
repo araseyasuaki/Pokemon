@@ -41,27 +41,24 @@ export default function Kantoo(props: apiConpProps) {
 
   return (
     <>
-      <main className="inline-block">
+      <>
         {pokeData.length > 0 ? (
-          <section className="flex flex-wrap justify-start">
+          <>
             {pokeData.map((data, index) => (
               <section className="sm:w-1/3 md:w-1/4 lg:w-1/5 xl:w-1/6" key={index}>
-                <div className="border-2 border-gray-200 rounded-xl w-[90%] p-4 mx-auto my-2.5">
+                <div className="w-[90%] m-auto py-4 border-2 border-gray-200 rounded-xl my-4 px-4">
                   <img src={data.img} alt={data.name}/>
                   <p className="h-8 pt-4">{data.names}</p>
                 </div>
               </section>
             ))}
-          </section>
+          </>
         ) : (
-          <section>
-            <section>
-              <img src="" alt="" />
-              <p></p>
-            </section>
-          </section>
+          <>
+            <h1>loding...</h1>
+          </>
         )}
-      </main>
+      </>
     </>
   );
 }

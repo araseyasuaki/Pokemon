@@ -31,8 +31,14 @@ export default function Home() {
 
   return (
     <>
-    <Kantoo/>
-    <Area firstNumber={51} lastNumber={100}/>
+      <section className="flex flex-wrap">
+        <Area firstNumber={1} lastNumber={50}/>
+        <Area firstNumber={51} lastNumber={100}/>
+        <Area firstNumber={101} lastNumber={150}/>
+        <Area firstNumber={151} lastNumber={200}/>
+        <Area firstNumber={201} lastNumber={250}/>
+        <Area firstNumber={251} lastNumber={300}/>
+      </section>
     </>
   );
 }
