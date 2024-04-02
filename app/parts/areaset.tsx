@@ -28,7 +28,7 @@ export default function AreaSet(props: numberProps) {
   return(
     <>
       {count.map((data, index)=>(
-        <Area number={data.number}/>
+        <Area key={index} number={data.number}/>
       ))}
     </>
   )

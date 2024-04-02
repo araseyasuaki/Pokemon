@@ -33,6 +33,8 @@ export default function Home() {
     <>
       <section className="flex flex-wrap">
         <Areaset firstNumber={1} lastNumber={100}/>
+        <Areaset firstNumber={101} lastNumber={200}/>
+        <Areaset firstNumber={201} lastNumber={300}/>
       </section>
     </>
   );
