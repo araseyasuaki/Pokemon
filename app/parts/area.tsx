@@ -54,8 +54,9 @@ export default function Kantoo(props: apiConpProps) {
         ) : (
           <>
             <section className="sm:w-1/3 md:w-1/4 lg:w-1/5 xl:w-1/6">
-              <div className="w-[90%] m-auto py-4 border-2 border-gray-200 rounded-xl my-4 px-4 aspect-square">
-                <div className="h-8 pt-4"></div>
+              <div className="w-[90%] m-auto py-4 border-2 border-gray-200 rounded-xl my-4 px-4">
+                <div className="aspect-square"/>
+                <div className="h-8 pt-4"/>
               </div>
             </section>
           </>
