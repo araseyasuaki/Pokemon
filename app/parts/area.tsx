@@ -44,7 +44,7 @@ export default function Kantoo(props: apiConpProps) {
           <>
             {pokeData.map((data, index) => (
               <section className="sm:w-1/3 md:w-1/4 lg:w-1/5 xl:w-1/6" key={index}>
-                <div className="w-[90%] m-auto py-4 border-2 border-gray-200 rounded-xl my-4 px-4">
+                <div className="w-[90%] m-auto py-4 border-2 border-gray-200 rounded-xl my-4 px-4 aspect-square">
                   <img src={data.img} alt={data.name}/>
                   <p className="h-8 pt-4">{data.names}</p>
                 </div>
@@ -53,7 +53,11 @@ export default function Kantoo(props: apiConpProps) {
           </>
         ) : (
           <>
-            <h1>loding...</h1>
+            <section className="sm:w-1/3 md:w-1/4 lg:w-1/5 xl:w-1/6">
+              <div className="w-[90%] m-auto py-4 border-2 border-gray-200 rounded-xl my-4 px-4 aspect-square">
+                <div className="h-8 pt-4"></div>
+              </div>
+            </section>
           </>
         )}
       </>
