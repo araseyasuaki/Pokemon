@@ -91,7 +91,7 @@ export default function Home() {
           <Areaset firstNumber={901} lastNumber={1000}/>
         )}
         {resCount >= 6 && (
-          <Areaset firstNumber={1001} lastNumber={1026}/>
+          <Areaset firstNumber={1001} lastNumber={1025}/>
         )}
       </section>
     </>
