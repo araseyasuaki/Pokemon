@@ -20,7 +20,6 @@ export default function AreaSet(props: numberProps) {
     const countData: countProps[] = [];
     for(let i = props.firstNumber; i <= props.lastNumber; i++){
       countData.push({number: i,});
-      console.log(countData)
     }
     setcount(countData)
   },[])
