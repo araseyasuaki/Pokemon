@@ -60,35 +60,38 @@ export default function Home() {
   return (
     <>
       <section className="flex flex-wrap">
-        {resCount > 0.5 && (
-          <>
-          <Areaset firstNumber={1} lastNumber={200}/>
-          </>
+        {resCount >= 1 && (
+          <Areaset firstNumber={1} lastNumber={100}/>
         )}
-        {resCount > 1.5 && (
-          <>
-          <Areaset firstNumber={201} lastNumber={400}/>
-          </>
+        {resCount >= 1.5 && (
+          <Areaset firstNumber={101} lastNumber={200}/>
         )}
-        {resCount > 2 && (
-          <>
-          <Areaset firstNumber={401} lastNumber={600}/>
-          </>
+        {resCount >= 2 && (
+          <Areaset firstNumber={201} lastNumber={300}/>
         )}
-        {resCount > 2.5 && (
-          <>
-          <Areaset firstNumber={601} lastNumber={800}/>
-          </>
+        {resCount >= 2.5 && (
+          <Areaset firstNumber={301} lastNumber={400}/>
         )}
-        {resCount > 3 && (
-          <>
-          <Areaset firstNumber={801} lastNumber={1000}/>
-          </>
+        {resCount >= 3 && (
+          <Areaset firstNumber={401} lastNumber={500}/>
         )}
-        {resCount > 3.5 && (
-          <>
-          <Areaset firstNumber={1001} lastNumber={1025}/>
-          </>
+        {resCount >= 3.5 && (
+          <Areaset firstNumber={501} lastNumber={600}/>
+        )}
+        {resCount >= 4 && (
+          <Areaset firstNumber={601} lastNumber={700}/>
+        )}
+        {resCount >= 4.5 && (
+          <Areaset firstNumber={701} lastNumber={800}/>
+        )}
+        {resCount >= 5 && (
+          <Areaset firstNumber={801} lastNumber={900}/>
+        )}
+        {resCount >= 5.5 && (
+          <Areaset firstNumber={901} lastNumber={1000}/>
+        )}
+        {resCount >= 6 && (
+          <Areaset firstNumber={1001} lastNumber={1026}/>
         )}
       </section>
     </>
