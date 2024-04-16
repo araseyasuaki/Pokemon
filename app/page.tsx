@@ -1,7 +1,7 @@
 'use client'
 
 import { useState, useEffect } from "react";
-import Areaset from "@/app/parts/areaset";
+import AreaSet from "@/app/parts/areaset";
 
 export default function Home() {
 
@@ -25,24 +25,24 @@ export default function Home() {
   return (
     <>
       <section className="flex flex-wrap">
-        <Areaset firstNumber={1} lastNumber={30}/>
+        <AreaSet firstNumber={1} lastNumber={30}/>
         {resCount >= 1 && (
-          <Areaset firstNumber={31} lastNumber={100}/>
+          <AreaSet firstNumber={31} lastNumber={100}/>
         )}
-        {resCount >= 3 && (
-          <Areaset firstNumber={101} lastNumber={300}/>
+        {resCount >= 2 && (
+          <AreaSet firstNumber={101} lastNumber={300}/>
         )}
-        {resCount >= 5 && (
-          <Areaset firstNumber={301} lastNumber={500}/>
+        {resCount >= 4 && (
+          <AreaSet firstNumber={301} lastNumber={500}/>
         )}
-        {resCount >= 7 && (
-          <Areaset firstNumber={501} lastNumber={700}/>
+        {resCount >= 6 && (
+          <AreaSet firstNumber={501} lastNumber={700}/>
         )}
-        {resCount >= 9 && (
-          <Areaset firstNumber={701} lastNumber={900}/>
+        {resCount >= 8 && (
+          <AreaSet firstNumber={701} lastNumber={900}/>
         )}
-        {resCount >= 11 && (
-          <Areaset firstNumber={901} lastNumber={1025}/>
+        {resCount >= 10 && (
+          <AreaSet firstNumber={901} lastNumber={1025}/>
         )}
       </section>
     </>
