@@ -12,7 +12,7 @@ import { MenuBer } from "@/app/parts/menulink";
     { link: "karosu", text: "カロス地方" },
     { link: "aroora", text: "アローラ地方" },
     { link: "gararu", text: "ガラル地方" },
-    { link: "hisui", text: "ヒスイ地方" },
+    // { link: "hisui", text: "ヒスイ地方" },
     { link: "parudea", text: "パルデア地方" },
   ];
 
@@ -40,10 +40,10 @@ import { MenuBer } from "@/app/parts/menulink";
               </div>
               <div className={clsx("transition-height duration-500 ease-out", {"h-[560px]": area === true, "h-0": area === false})}></div>
             </section>
-            <div className="z-10 flex flex-col">
+            {/* <div className="z-10 flex flex-col">
               <MenuBer link="mega" text="メガシンカ"/>
               <MenuBer link="max" text="キョダイマックス"/>
-            </div>
+            </div> */}
           </nav>
         </section>
       </section>
