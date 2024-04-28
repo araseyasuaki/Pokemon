@@ -3,6 +3,10 @@
 * Tailwind-CSS
 * TypeScript
 ---
+###使用API
+* https://pokeapi.co/api/v2/pokemon/number
+* https://pokeapi.co/api/v2/pokemon-species/number
+---
 今回のサイトはAPIで非同期処理を使ったポケモン図鑑です。
 そして、今回は初めてNext.js、Tailwind-CSS、TypeScript使ってサイトを制作しました。
 主な目的はNext.jsを実際に使ってサイトを制作して勉強することです。
