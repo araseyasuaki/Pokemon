@@ -1,8 +1,8 @@
-### 使用技術
+#### 使用技術
 * Next.js
 * Tailwind-CSS
 * TypeScript
-
+---
 今回のサイトはAPIで非同期処理を使ったポケモン図鑑です。
 そして、今回は初めてNext.js、Tailwind-CSS、TypeScript使ってサイトを制作しました。
 主な目的はNext.jsを実際に使ってサイトを制作して勉強することです。
