@@ -4,8 +4,8 @@
 * TypeScript
 ---
 #### 使用API
-* https://pokeapi.co/api/v2/pokemon/129
-* https://pokeapi.co/api/v2/pokemon-species/10033
+* https://pokeapi.co/api/v2/pokemon/10033
+* https://pokeapi.co/api/v2/pokemon-species/129
 ---
 今回のサイトはAPIで非同期処理を使ったポケモン図鑑です。
 
