@@ -3,7 +3,7 @@
 * Tailwind-CSS
 * TypeScript
 ---
-###使用API
+### 使用API
 * https://pokeapi.co/api/v2/pokemon/number
 * https://pokeapi.co/api/v2/pokemon-species/number
 ---
