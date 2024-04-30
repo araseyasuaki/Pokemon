@@ -31,13 +31,13 @@ import { MenuBer } from "@/app/parts/menulink";
               <span className={clsx("absolute right-6 top-1/2 h-[15px] -translate-y-1/2 transition duration-500 ease-out",{"rotate-90": area === true})}>＞</span>
             </button>
             <section className="relative">
-              <div className="absolute ml-7 w-[176px] border-l-2 border-gray-200 flex flex-col h-[560px]">
+              <div className="absolute ml-7 w-[176px] border-l-2 border-gray-200 flex flex-col h-[504px]">
                 {areaData.map((data, index)=>(
                   <MenuBer key={index} link={data.link} text={data.text}/>
                 ))}
-                <div className={clsx("absolute bottom-0 right-0 w-[176px] transition-height bg-white duration-500 ease-out", {"h-0": area === true, "h-[560px]": area === false})}></div>
+                <div className={clsx("absolute bottom-0 right-0 w-[176px] transition-height bg-white duration-500 ease-out", {"h-0": area === true, "h-[504px]": area === false})}></div>
               </div>
-              <div className={clsx("transition-height duration-500 ease-out", {"h-[560px]": area === true, "h-0": area === false})}></div>
+              <div className={clsx("transition-height duration-500 ease-out", {"h-[504px]": area === true, "h-0": area === false})}></div>
             </section>
             <div className="z-10 flex flex-col">
               <MenuBer link="mega" text="メガシンカ"/>
