@@ -9,7 +9,8 @@ interface pokemonData {
 }
 
 interface apiConpProps {
-  number: number,
+  imgnumber: number,
+  namenumber: number,
 }
 
 export default function Kantoo(props: apiConpProps) {
@@ -20,8 +21,8 @@ export default function Kantoo(props: apiConpProps) {
     const fetchData = async () => {
       try {
         const tempPokeData: pokemonData[] = [];
-        const resA = await fetch(`https://pokeapi.co/api/v2/pokemon/${props.number}`);
-        const resB = await fetch(`https://pokeapi.co/api/v2/pokemon-species/${props.number}`);
+        const resA = await fetch(`https://pokeapi.co/api/v2/pokemon/${props.imgnumber}`);
+        const resB = await fetch(`https://pokeapi.co/api/v2/pokemon-species/${props.namenumber}`);
         const dataA = await resA.json();
         const dataB = await resB.json();
         tempPokeData.push({
